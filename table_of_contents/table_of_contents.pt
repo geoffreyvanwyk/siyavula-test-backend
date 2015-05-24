@@ -7,7 +7,18 @@
 
     <body>
         <h1>Wiki Page Table-Of-Contents Fetcher</h1>
-        <p><b>Requested Page: <a href="${page_url}">${page_name}</a></p>
+
+        <p>
+            <b>Requested Page: <a href="${page_url}">${page_name}</a>
+                <button onclick="go_home()">Reset</button>
+        </p>
+
         <p>${structure: table_of_contents}</p>
+
+        <script>
+            function go_home() {
+                location.href="${request.route_url('home')}";
+            }
+        </script>
     </body>
 </html>
