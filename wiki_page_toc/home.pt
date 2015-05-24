@@ -8,7 +8,7 @@
     <body>
         <h1>Wiki Page Table-Of-Contents Fetcher<h1>
 
-        <form method="POST" action="${request.route_url('toc')}">
+        <form method="POST" action="${request.route_url('table_of_contents')}">
             <input type="url" name="page_url">
             <button type="submit">Submit</button>
         </form>
