@@ -1,13 +1,13 @@
 from setuptools import setup
 
 setup(
-    name='wiki_page_toc',
+    name='table_of_contents',
     install_requires=[
         'pyramid',
         'pyramid_chameleon'
     ],
     entry_points="""\
         [paste.app_factory]
-        main = wiki_page_toc:main
+        main = table_of_contents:main
         """,
 )

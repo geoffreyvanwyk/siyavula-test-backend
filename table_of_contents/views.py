@@ -1,6 +1,7 @@
 from bs4 import BeautifulSoup
 from pyramid.view import view_config
 import urllib.request as http
+import re
 
 
 @view_config(route_name='home', renderer='home.pt')
@@ -12,9 +13,10 @@ def home(request):
 def table_of_contents(request):
     url = request.params['page_url']
     html = http.urlopen(url).read()
-    soup = BeautifulSoup(html)
 
     return {
         'title': 'Table Of Contents',
-        'table_of_contents': soup.find(id="toc"),
+        'page_name': re.search(r"wiki/(.*)$", url).group(1),
+        'page_url': url,
+        'table_of_contents': BeautifulSoup(html).find(id="toc"),
     }
