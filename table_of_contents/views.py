@@ -4,12 +4,12 @@ import urllib.request as http
 from .lib import (validate_url, get_page_name)
 
 
-@view_config(route_name='home', renderer='home.pt')
+@view_config(route_name='home', renderer='home.jinja2')
 def home(request):
     return {'title': 'Home'}
 
 
-@view_config(route_name='table_of_contents', renderer='table_of_contents.pt')
+@view_config(route_name='table_of_contents', renderer='table_of_contents.jinja2')
 def table_of_contents(request):
     url = validate_url(request.params['page_url'])
     html = http.urlopen(url).read()
