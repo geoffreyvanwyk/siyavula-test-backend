@@ -5,6 +5,10 @@
 {% block content %}
     <p>Enter a URL for a Wikipedia page into the text box:</p>
 
+    {% if detail %}
+        <p>Error: {{ detail }}</p>
+    {% endif %}
+
     <form method="POST" action="{{ request.route_url('table_of_contents') }}">
         <input type="url" name="page_url">
         <button type="submit">Submit</button>

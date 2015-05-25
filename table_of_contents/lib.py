@@ -11,7 +11,7 @@ def validate_url(url):
     if not re.match(r".*wikipedia.org", domain):
         raise HTTPBadRequest(detail='The URL does not contain a Wikipedia domain.')
 
-    if not re.match(r"/wiki/[A-Z_]", path):
+    if not re.match(r"/wiki/[a-zA-Z0-9_]+$", path):
         raise HTTPBadRequest(detail='The path to the page is not correct.')
 
     return url
