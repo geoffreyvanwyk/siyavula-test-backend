@@ -1,0 +1,12 @@
+{% extends "templates/layout.jinja2" %}
+
+{% block title %}Home{% endblock %}
+
+{% block content %}
+    <p>Enter a URL for a Wikipedia page into the text box:</p>
+
+    <form method="POST" action="{{ request.route_url('table_of_contents') }}">
+        <input type="url" name="page_url">
+        <button type="submit">Submit</button>
+    </form>
+{% endblock %}

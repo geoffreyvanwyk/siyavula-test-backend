@@ -1,0 +1,20 @@
+{% extends "templates/layout.jinja2" %}
+
+{% block title %}{{ page_name }}{% endblock %}
+
+{% block content %}
+    <p>
+        <b>Requested Page: <a href="{{ page_url }}">{{ page_name }}</a>
+        <button onclick="go_home()">Reset</button>
+    </p>
+
+    <p>{{ table_of_contents | safe }}</p>
+{% endblock %}
+
+{% block footer_scripts %}
+    <script>
+        function go_home() {
+            location.href="{{ request.route_url('home') }}";
+        }
+    </script>
+{% endblock %}
