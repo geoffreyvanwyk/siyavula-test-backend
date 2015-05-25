@@ -32,7 +32,7 @@ Install Pyramid web framework:
 
 Install dependencies:
 
-    $ easy_install pyramid_jinja2 
+    $ easy_install pyramid_jinja2 beautifulsoup4
 
 Install development dependencies:
 
