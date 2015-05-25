@@ -19,7 +19,9 @@ def table_of_contents(request):
         'title': 'Table Of Contents',
         'page_name': get_page_name(url),
         'page_url': url,
-        'table_of_contents': BeautifulSoup(html).find(id="toc") or 'The page does not have a table of contents.',
+        'table_of_contents':
+            BeautifulSoup(html).find(id="toc") or
+            'The page does not have a table of contents.',
     }
 
 

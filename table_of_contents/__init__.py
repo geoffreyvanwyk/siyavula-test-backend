@@ -6,7 +6,7 @@ def main(global_config, **settings):
     config.include('pyramid_jinja2')
 
     config.add_route('home', '/')
-    config.add_route('table_of_contents', '/table_of_contents')
+    config.add_route('table_of_contents', '/table-of-contents')
     config.scan('.views')
 
     return config.make_wsgi_app()
